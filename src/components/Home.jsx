@@ -26,7 +26,7 @@ function Home () {
     }
 
     return (
-        <div>
+        <div className="max-w-7xl mx-auto">
             <WalletBalance />
 
             <h1>XeroInt NFT Collection</h1>
@@ -74,11 +74,20 @@ function NFTImage({ tokenId, getCount }) {
       alert(uri);
     }
     return (
-      <div className="" style={{ width: '18rem' }}>
-        {/* <img className="" src={isMinted ? imageURI : 'img/placeholder.png'}></img> */}
-        <img className="" src={ imageURI }></img>
+      <div className="max-w-7xl mx-auto" >
+          <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+            <span className="relative">
+                <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
+                    <img src={imageURI} alt="" className="object-cover pointer-events-none group-hover:opacity-75" />
+                    {/* <img className="" src={isMinted ? imageURI : 'img/placeholder.png'}></img> */}
+                    <button type="button" className="absolute inset-0 focus:outline-none">
+                        <span className="sr-only">View details for</span>
+                    </button>
+                </div>
+                <p className="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">ID #{tokenId}</p>
+            </span>
+        </div>
         <div className="">
-          <h5 className="">ID #{tokenId}</h5>
           {!isMinted ? (
             <button className="" onClick={mintToken}>
               Mint
