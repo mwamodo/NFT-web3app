@@ -34,7 +34,7 @@ function Home () {
                 .fill(0)
                 .map((_, i) => (
                     <div key={i}>
-                    <NFTImage tokenId={i} getCount={getCount} />
+                        <NFTImage tokenId={i} getCount={getCount} />
                     </div>
                 ))}
         </div>
